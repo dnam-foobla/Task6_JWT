@@ -4,11 +4,13 @@
 Schema users
 ```javascript
 {
-  name: String
+  name: String,
+  user: String,
+  password: String,
   products: 
     [{
         name: String,
-        amout: Number,
+        amount: Number,
         price: Number
      } ,...]
 }
