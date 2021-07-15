@@ -1,6 +1,4 @@
-<<<<<<< HEAD
-# Task5_Mongo
-=======
+
 # JWT
 
 Schema users
@@ -15,4 +13,4 @@ Schema users
      } ,...]
 }
 ```
->>>>>>> de85dc3ea75ace854759e7cdb626a627b7d804c6
+
