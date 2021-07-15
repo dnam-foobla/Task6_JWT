@@ -8,6 +8,6 @@ module.exports.signUp = async (req, res) => {
       password: password,
     });
     const result = await newUser.save()
-    console.log(result)
-    res.sendStatus(200)
+        .then((done) => res.sendStatus(200))
+        .catch(err => res.sendStatus(400));
 }

@@ -6,9 +6,7 @@ module.exports.authSignup = async(req, res, next) => {
     } = req.body;
 
     const result = await User.findOne({ user: user })
-    console.log({"result": !result})
     if (!result) {
-        console.log(result);
         next();   
     }
     else {
