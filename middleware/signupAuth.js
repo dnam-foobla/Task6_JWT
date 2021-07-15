@@ -10,6 +10,6 @@ module.exports.authSignup = async(req, res, next) => {
         next();   
     }
     else {
-        res.status(403).send("Account is exist")
+        res.status(403).json({ message: "Account is exist" })
     }
 }
