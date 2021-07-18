@@ -14,18 +14,16 @@ module.exports.signUp = async (req, res) => {
         password: hash,
       });
       const result = await newUser.save()
-        .then((done) => {
-          const token = jwt.sign(
-            {
-                data: {
-                    user: user
-                }
-            },
-            process.env.SECRET_KEY,
-            {expiresIn: 60 * 300}
-          )
-          res.status(200).json({token: token, message: "Create account successfully"})
-        }) 
-        .catch(err => res.status(400).json({message: "Do not create account, please try again"}));
+      .catch(err => res.status(400).json({ message: "Do not create account, please try again" }));
+      const token = jwt.sign(
+        {
+            data: {
+                user: user
+            }
+        },
+        process.env.SECRET_KEY,
+        {expiresIn: 60 * 300}
+      )
+      res.status(200).json({token: token, message: "Create account successfully"})
   });
 }

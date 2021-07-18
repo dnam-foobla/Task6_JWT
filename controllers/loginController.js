@@ -7,7 +7,6 @@ module.exports.login = async (req, res) => {
     let {
         user
     } = req.body;
-    // console.log(result.user);
 
     const token = jwt.sign(
         {
